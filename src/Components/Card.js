@@ -1,7 +1,9 @@
-import React from "react";
-import Model from "./Model";
+import React, { useState } from "react";
+import { Model } from "./Model";
 
 export const Card = ({ book }) => {
+  const [show, setShow] = useState(false);
+  const [bookItem, setItem] = useState();
   console.log(book);
 
   return (
@@ -11,7 +13,7 @@ export const Card = ({ book }) => {
           item.volumeInfo.imageLinks &&
           item.volumeInfo.imageLinks.smallThumbnail;
         let amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
-        if (thumbnail != undefined && amount != undefined) {
+        if (thumbnail !== undefined && amount !== undefined) {
           return (
             <div>
               <div
@@ -24,7 +26,7 @@ export const Card = ({ book }) => {
                 <img src={thumbnail} alt="" />
                 <div className="bottom">
                   <h3 className="title">{item.volumeInfo.title}</h3>
-                  <p className="amount">&#8377;{amount}</p>
+                  <p className="amount">LKR {amount}</p>
                 </div>
               </div>
               <Model
@@ -35,7 +37,10 @@ export const Card = ({ book }) => {
             </div>
           );
         }
+        return null;
       })}
     </div>
   );
 };
+
+export default Card;

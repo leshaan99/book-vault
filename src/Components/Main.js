@@ -1,4 +1,6 @@
 import React from 'react'
+import { Card } from './Card';
+import axios from 'axios';
 
 export const Main = () => {
   return (
@@ -16,7 +18,7 @@ export const Main = () => {
         </div>
       </div>
       <div className='container'>
-
+        <Card/>
       </div>
     </div>
   )

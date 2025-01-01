@@ -1,5 +1,5 @@
 import React from "react";
-
+import Model from "./Model";
 
 export const Card = ({ book }) => {
   console.log(book);
@@ -27,7 +27,7 @@ export const Card = ({ book }) => {
                   <p className="amount">&#8377;{amount}</p>
                 </div>
               </div>
-              <Modal
+              <Model
                 show={show}
                 item={bookItem}
                 onClose={() => setShow(false)}
